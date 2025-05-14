@@ -1,0 +1,632 @@
+2025/05/14 19:15:53 [error] [php] include(C:\xampp\htdocs\ksc\protected\models\Product.php): Failed to open stream: No such file or directory (C:\xampp\htdocs\ksc\framework\YiiBase.php:435)
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\YiiBase.php(435): include()
+#1 C:\xampp\htdocs\ksc\protected\views\layouts\main.php(5): autoload()
+#2 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\xampp\htdocs\ksc\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#5 C:\xampp\htdocs\ksc\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#6 C:\xampp\htdocs\ksc\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(215): CContentDecorator->run()
+#8 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(309): SiteController->endWidget()
+#9 C:\xampp\htdocs\ksc\protected\views\layouts\column1.php(6): SiteController->endContent()
+#10 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#12 C:\xampp\htdocs\ksc\framework\web\CController.php(787): SiteController->renderFile()
+#13 C:\xampp\htdocs\ksc\protected\controllers\SiteController.php(32): SiteController->render()
+#14 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\ksc\framework\web\CController.php(286): SiteController->runAction()
+#17 C:\xampp\htdocs\ksc\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#18 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): SiteController->run()
+#19 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\ksc\index.php(13): CWebApplication->run()
+REQUEST_URI=/ksc/
+in C:\xampp\htdocs\ksc\protected\views\layouts\main.php (5)
+in C:\xampp\htdocs\ksc\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\ksc\protected\controllers\SiteController.php (32)
+2025/05/14 19:19:41 [error] [php] include(C:\xampp\htdocs\ksc\protected\models\Product.php): Failed to open stream: No such file or directory (C:\xampp\htdocs\ksc\framework\YiiBase.php:435)
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\YiiBase.php(435): include()
+#1 C:\xampp\htdocs\ksc\protected\views\layouts\main.php(5): autoload()
+#2 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\xampp\htdocs\ksc\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#5 C:\xampp\htdocs\ksc\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#6 C:\xampp\htdocs\ksc\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(215): CContentDecorator->run()
+#8 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(309): SiteController->endWidget()
+#9 C:\xampp\htdocs\ksc\protected\views\layouts\column1.php(6): SiteController->endContent()
+#10 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#12 C:\xampp\htdocs\ksc\framework\web\CController.php(787): SiteController->renderFile()
+#13 C:\xampp\htdocs\ksc\protected\controllers\SiteController.php(32): SiteController->render()
+#14 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\ksc\framework\web\CController.php(286): SiteController->runAction()
+#17 C:\xampp\htdocs\ksc\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#18 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): SiteController->run()
+#19 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\ksc\index.php(13): CWebApplication->run()
+REQUEST_URI=/ksc/
+in C:\xampp\htdocs\ksc\protected\views\layouts\main.php (5)
+in C:\xampp\htdocs\ksc\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\ksc\protected\controllers\SiteController.php (32)
+2025/05/14 19:19:41 [error] [php] include(C:\xampp\htdocs\ksc\protected\models\Product.php): Failed to open stream: No such file or directory (C:\xampp\htdocs\ksc\framework\YiiBase.php:435)
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\YiiBase.php(435): include()
+#1 C:\xampp\htdocs\ksc\protected\views\layouts\main.php(5): autoload()
+#2 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\xampp\htdocs\ksc\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#5 C:\xampp\htdocs\ksc\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#6 C:\xampp\htdocs\ksc\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(215): CContentDecorator->run()
+#8 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(309): SiteController->endWidget()
+#9 C:\xampp\htdocs\ksc\protected\views\layouts\column1.php(6): SiteController->endContent()
+#10 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#12 C:\xampp\htdocs\ksc\framework\web\CController.php(787): SiteController->renderFile()
+#13 C:\xampp\htdocs\ksc\protected\controllers\SiteController.php(32): SiteController->render()
+#14 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\ksc\framework\web\CController.php(286): SiteController->runAction()
+#17 C:\xampp\htdocs\ksc\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#18 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): SiteController->run()
+#19 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\ksc\index.php(13): CWebApplication->run()
+REQUEST_URI=/ksc/
+in C:\xampp\htdocs\ksc\protected\views\layouts\main.php (5)
+in C:\xampp\htdocs\ksc\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\ksc\protected\controllers\SiteController.php (32)
+2025/05/14 19:20:05 [error] [exception.Error] Error: Class "Product" not found in C:\xampp\htdocs\ksc\protected\views\layouts\main.php:5
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\ksc\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\ksc\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#4 C:\xampp\htdocs\ksc\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#5 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(215): COutputProcessor->run()
+#6 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(309): CBaseController->endWidget('CContentDecorat...')
+#7 C:\xampp\htdocs\ksc\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#8 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\ksc\framework\web\CController.php(787): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\ksc\protected\controllers\SiteController.php(32): CController->render('index')
+#12 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#13 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\ksc\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('')
+#17 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#18 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/ksc/
+---
+2025/05/14 19:21:56 [error] [php] include(C:\xampp\htdocs\ksc\protected\models\Product.php): Failed to open stream: No such file or directory (C:\xampp\htdocs\ksc\framework\YiiBase.php:435)
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\YiiBase.php(435): include()
+#1 C:\xampp\htdocs\ksc\protected\views\layouts\main.php(5): autoload()
+#2 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\xampp\htdocs\ksc\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#5 C:\xampp\htdocs\ksc\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#6 C:\xampp\htdocs\ksc\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(215): CContentDecorator->run()
+#8 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(309): SiteController->endWidget()
+#9 C:\xampp\htdocs\ksc\protected\views\layouts\column1.php(6): SiteController->endContent()
+#10 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#12 C:\xampp\htdocs\ksc\framework\web\CController.php(787): SiteController->renderFile()
+#13 C:\xampp\htdocs\ksc\protected\controllers\SiteController.php(32): SiteController->render()
+#14 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\ksc\framework\web\CController.php(286): SiteController->runAction()
+#17 C:\xampp\htdocs\ksc\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#18 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): SiteController->run()
+#19 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\ksc\index.php(13): CWebApplication->run()
+REQUEST_URI=/ksc/
+in C:\xampp\htdocs\ksc\protected\views\layouts\main.php (5)
+in C:\xampp\htdocs\ksc\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\ksc\protected\controllers\SiteController.php (32)
+2025/05/14 19:24:00 [error] [php] include(Product.php): Failed to open stream: No such file or directory (C:\xampp\htdocs\ksc\framework\YiiBase.php:463)
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\YiiBase.php(463): include()
+#1 C:\xampp\htdocs\ksc\protected\views\layouts\main.php(5): autoload()
+#2 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\xampp\htdocs\ksc\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#5 C:\xampp\htdocs\ksc\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#6 C:\xampp\htdocs\ksc\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(215): CContentDecorator->run()
+#8 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(309): SiteController->endWidget()
+#9 C:\xampp\htdocs\ksc\protected\views\layouts\column1.php(6): SiteController->endContent()
+#10 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#12 C:\xampp\htdocs\ksc\framework\web\CController.php(787): SiteController->renderFile()
+#13 C:\xampp\htdocs\ksc\protected\controllers\SiteController.php(32): SiteController->render()
+#14 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\ksc\framework\web\CController.php(286): SiteController->runAction()
+#17 C:\xampp\htdocs\ksc\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#18 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): SiteController->run()
+#19 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\ksc\index.php(13): CWebApplication->run()
+REQUEST_URI=/ksc/
+in C:\xampp\htdocs\ksc\protected\views\layouts\main.php (5)
+in C:\xampp\htdocs\ksc\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\ksc\protected\controllers\SiteController.php (32)
+2025/05/14 19:25:21 [error] [php] include(C:\xampp\htdocs\ksc\protected\models\Product.php): Failed to open stream: No such file or directory (C:\xampp\htdocs\ksc\framework\YiiBase.php:435)
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\YiiBase.php(435): include()
+#1 C:\xampp\htdocs\ksc\protected\views\site\index.php(5): autoload()
+#2 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\xampp\htdocs\ksc\framework\web\CController.php(872): SiteController->renderFile()
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(785): SiteController->renderPartial()
+#6 C:\xampp\htdocs\ksc\protected\controllers\SiteController.php(32): SiteController->render()
+#7 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ksc\framework\web\CController.php(286): SiteController->runAction()
+#10 C:\xampp\htdocs\ksc\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): SiteController->run()
+#12 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ksc\index.php(13): CWebApplication->run()
+REQUEST_URI=/ksc/
+in C:\xampp\htdocs\ksc\protected\views\site\index.php (5)
+in C:\xampp\htdocs\ksc\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\ksc\index.php (13)
+2025/05/14 19:25:29 [error] [php] include(C:\xampp\htdocs\ksc\protected\models\Product.php): Failed to open stream: No such file or directory (C:\xampp\htdocs\ksc\framework\YiiBase.php:435)
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\YiiBase.php(435): include()
+#1 C:\xampp\htdocs\ksc\protected\views\site\index.php(5): autoload()
+#2 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\xampp\htdocs\ksc\framework\web\CController.php(872): SiteController->renderFile()
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(785): SiteController->renderPartial()
+#6 C:\xampp\htdocs\ksc\protected\controllers\SiteController.php(32): SiteController->render()
+#7 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ksc\framework\web\CController.php(286): SiteController->runAction()
+#10 C:\xampp\htdocs\ksc\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): SiteController->run()
+#12 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ksc\index.php(13): CWebApplication->run()
+REQUEST_URI=/ksc/
+in C:\xampp\htdocs\ksc\protected\views\site\index.php (5)
+in C:\xampp\htdocs\ksc\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\ksc\index.php (13)
+2025/05/14 19:25:29 [error] [php] include(C:\xampp\htdocs\ksc\protected\models\Product.php): Failed to open stream: No such file or directory (C:\xampp\htdocs\ksc\framework\YiiBase.php:435)
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\YiiBase.php(435): include()
+#1 C:\xampp\htdocs\ksc\protected\views\site\index.php(5): autoload()
+#2 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\xampp\htdocs\ksc\framework\web\CController.php(872): SiteController->renderFile()
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(785): SiteController->renderPartial()
+#6 C:\xampp\htdocs\ksc\protected\controllers\SiteController.php(32): SiteController->render()
+#7 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ksc\framework\web\CController.php(286): SiteController->runAction()
+#10 C:\xampp\htdocs\ksc\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): SiteController->run()
+#12 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ksc\index.php(13): CWebApplication->run()
+REQUEST_URI=/ksc/
+in C:\xampp\htdocs\ksc\protected\views\site\index.php (5)
+in C:\xampp\htdocs\ksc\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\ksc\index.php (13)
+2025/05/14 19:25:29 [error] [php] include(C:\xampp\htdocs\ksc\protected\models\Product.php): Failed to open stream: No such file or directory (C:\xampp\htdocs\ksc\framework\YiiBase.php:435)
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\YiiBase.php(435): include()
+#1 C:\xampp\htdocs\ksc\protected\views\site\index.php(5): autoload()
+#2 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\xampp\htdocs\ksc\framework\web\CController.php(872): SiteController->renderFile()
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(785): SiteController->renderPartial()
+#6 C:\xampp\htdocs\ksc\protected\controllers\SiteController.php(32): SiteController->render()
+#7 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ksc\framework\web\CController.php(286): SiteController->runAction()
+#10 C:\xampp\htdocs\ksc\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): SiteController->run()
+#12 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ksc\index.php(13): CWebApplication->run()
+REQUEST_URI=/ksc/
+in C:\xampp\htdocs\ksc\protected\views\site\index.php (5)
+in C:\xampp\htdocs\ksc\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\ksc\index.php (13)
+2025/05/14 19:51:33 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ksc\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ksc\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ksc\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('products/create')
+#9 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ksc/index.php?r=products/create
+HTTP_REFERER=http://localhost/ksc/index.php?r=products/index
+---
+2025/05/14 19:56:47 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ksc\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ksc\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ksc\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('products/create')
+#9 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ksc/index.php?r=products/create
+HTTP_REFERER=http://localhost/ksc/index.php?r=products/index
+---
+2025/05/14 20:16:29 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ksc\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ksc\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ksc\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('products/admin')
+#9 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ksc/index.php?r=products/admin
+HTTP_REFERER=http://localhost/ksc/index.php?r=products/view&id=1
+---
+2025/05/14 20:40:20 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ksc\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ksc\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ksc\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('received')
+#8 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('orders/received')
+#9 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ksc/index.php?r=orders/received
+HTTP_REFERER=http://localhost/ksc/index.php?r=products/create
+---
+2025/05/14 20:42:50 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ksc\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ksc\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ksc\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('my')
+#8 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('orders/my')
+#9 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ksc/index.php?r=orders/my
+HTTP_REFERER=http://localhost/ksc/index.php?r=cart/index
+---
+2025/05/14 21:01:08 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ksc\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ksc\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ksc\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('my')
+#8 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('orders/my')
+#9 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ksc/index.php?r=orders/my
+HTTP_REFERER=http://localhost/ksc/index.php?r=cart/index
+---
+2025/05/14 21:03:17 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ksc\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ksc\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ksc\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#8 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('products/dashbo...')
+#9 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ksc/index.php?r=products/dashboard
+HTTP_REFERER=http://localhost/ksc/index.php?r=site/index
+---
+2025/05/14 21:03:27 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ksc\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ksc\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ksc\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('received')
+#8 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('orders/received')
+#9 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ksc/index.php?r=orders/received
+HTTP_REFERER=http://localhost/ksc/index.php?r=products/manage
+---
+2025/05/14 21:05:08 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ksc\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ksc\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ksc\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#8 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('products/dashbo...')
+#9 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ksc/index.php?r=products/dashboard
+HTTP_REFERER=http://localhost/ksc/index.php?r=orders/received
+---
+2025/05/14 21:06:27 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ksc\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ksc\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ksc\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#8 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('products/dashbo...')
+#9 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ksc/index.php?r=products/dashboard
+HTTP_REFERER=http://localhost/ksc/index.php?r=orders/received
+---
+2025/05/14 21:06:28 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ksc\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ksc\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ksc\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#8 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('products/dashbo...')
+#9 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ksc/index.php?r=products/dashboard
+HTTP_REFERER=http://localhost/ksc/index.php?r=orders/received
+---
+2025/05/14 21:06:29 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ksc\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ksc\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ksc\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#8 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('products/dashbo...')
+#9 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ksc/index.php?r=products/dashboard
+HTTP_REFERER=http://localhost/ksc/index.php?r=orders/received
+---
+2025/05/14 21:08:09 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ksc\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ksc\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ksc\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('my')
+#8 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('orders/my')
+#9 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ksc/index.php?r=orders/my
+HTTP_REFERER=http://localhost/ksc/index.php?r=cart/index
+---
+2025/05/14 21:27:07 [error] [php] Undefined variable $category (C:\xampp\htdocs\ksc\protected\views\site\index.php:42)
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#2 C:\xampp\htdocs\ksc\framework\web\CController.php(872): SiteController->renderFile()
+#3 C:\xampp\htdocs\ksc\framework\web\CController.php(785): SiteController->renderPartial()
+#4 C:\xampp\htdocs\ksc\protected\controllers\SiteController.php(26): SiteController->render()
+#5 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\ksc\framework\web\CController.php(286): SiteController->runAction()
+#8 C:\xampp\htdocs\ksc\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): SiteController->run()
+#10 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\ksc\index.php(13): CWebApplication->run()
+REQUEST_URI=/ksc/index.php?r=site/index&category=Electronics
+in C:\xampp\htdocs\ksc\protected\views\site\index.php (42)
+in C:\xampp\htdocs\ksc\protected\controllers\SiteController.php (26)
+in C:\xampp\htdocs\ksc\index.php (13)
+2025/05/14 21:27:23 [error] [php] Undefined variable $category (C:\xampp\htdocs\ksc\protected\views\site\index.php:42)
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#2 C:\xampp\htdocs\ksc\framework\web\CController.php(872): SiteController->renderFile()
+#3 C:\xampp\htdocs\ksc\framework\web\CController.php(785): SiteController->renderPartial()
+#4 C:\xampp\htdocs\ksc\protected\controllers\SiteController.php(26): SiteController->render()
+#5 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\ksc\framework\web\CController.php(286): SiteController->runAction()
+#8 C:\xampp\htdocs\ksc\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): SiteController->run()
+#10 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\ksc\index.php(13): CWebApplication->run()
+REQUEST_URI=/ksc/index.php?r=site/index&category=Electronics
+in C:\xampp\htdocs\ksc\protected\views\site\index.php (42)
+in C:\xampp\htdocs\ksc\protected\controllers\SiteController.php (26)
+in C:\xampp\htdocs\ksc\index.php (13)
+2025/05/14 21:33:32 [error] [exception.ValueError] ValueError: Path cannot be empty in C:\xampp\htdocs\ksc\framework\web\CBaseController.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): CBaseController->renderInternal(false, Array, false)
+#1 C:\xampp\htdocs\ksc\framework\zii\widgets\CListView.php(291): CBaseController->renderFile(false, Array)
+#2 C:\xampp\htdocs\ksc\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#3 [internal function]: CBaseListView->renderSection(Array)
+#4 C:\xampp\htdocs\ksc\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#5 C:\xampp\htdocs\ksc\framework\zii\widgets\CBaseListView.php(149): CBaseListView->renderContent()
+#6 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(182): CBaseListView->run()
+#7 C:\xampp\htdocs\ksc\protected\views\products\index.php(18): CBaseController->widget('zii.widgets.CLi...', Array)
+#8 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\ksc\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\ksc\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#12 C:\xampp\htdocs\ksc\protected\controllers\ProductsController.php(106): CController->render('index', Array)
+#13 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): ProductsController->actionIndex()
+#14 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\ksc\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\ksc\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\ksc\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\ksc\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('index')
+#23 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('products/index')
+#24 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/ksc/index.php?r=products/index
+HTTP_REFERER=http://localhost/ksc/index.php?r=products/manage
+---
+2025/05/14 22:15:02 [error] [php] require_once(C:\xampp\htdocs\ksc\protected\views\site/../vendor/autoload.php): Failed to open stream: No such file or directory (C:\xampp\htdocs\ksc\protected\views\site\index.php:2)
+Stack trace:
+#0 C:\xampp\htdocs\ksc\protected\views\site\index.php(2): require_once()
+#1 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#3 C:\xampp\htdocs\ksc\framework\web\CController.php(872): SiteController->renderFile()
+#4 C:\xampp\htdocs\ksc\framework\web\CController.php(785): SiteController->renderPartial()
+#5 C:\xampp\htdocs\ksc\protected\controllers\SiteController.php(26): SiteController->render()
+#6 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#7 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\ksc\framework\web\CController.php(286): SiteController->runAction()
+#9 C:\xampp\htdocs\ksc\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#10 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): SiteController->run()
+#11 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\ksc\index.php(13): CWebApplication->run()
+REQUEST_URI=/ksc/index.php?r=site/index
+in C:\xampp\htdocs\ksc\protected\views\site\index.php (2)
+in C:\xampp\htdocs\ksc\protected\views\site\index.php (2)
+in C:\xampp\htdocs\ksc\protected\controllers\SiteController.php (26)
+2025/05/14 22:16:12 [error] [php] require_once(C:\xampp\htdocs\ksc\protected\views\site/../vendor/autoload.php): Failed to open stream: No such file or directory (C:\xampp\htdocs\ksc\protected\views\site\index.php:2)
+Stack trace:
+#0 C:\xampp\htdocs\ksc\protected\views\site\index.php(2): require_once()
+#1 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#3 C:\xampp\htdocs\ksc\framework\web\CController.php(872): SiteController->renderFile()
+#4 C:\xampp\htdocs\ksc\framework\web\CController.php(785): SiteController->renderPartial()
+#5 C:\xampp\htdocs\ksc\protected\controllers\SiteController.php(26): SiteController->render()
+#6 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#7 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\ksc\framework\web\CController.php(286): SiteController->runAction()
+#9 C:\xampp\htdocs\ksc\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#10 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): SiteController->run()
+#11 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\ksc\index.php(13): CWebApplication->run()
+REQUEST_URI=/ksc/index.php?r=site/index
+in C:\xampp\htdocs\ksc\protected\views\site\index.php (2)
+in C:\xampp\htdocs\ksc\protected\views\site\index.php (2)
+in C:\xampp\htdocs\ksc\protected\controllers\SiteController.php (26)
+2025/05/14 22:17:15 [error] [php] require_once(C:\xampp\htdocs\ksc\protected\vendor\autoload.php): Failed to open stream: No such file or directory (C:\xampp\htdocs\ksc\protected\controllers\StripeController.php:3)
+Stack trace:
+#0 C:\xampp\htdocs\ksc\protected\controllers\StripeController.php(3): require_once()
+#1 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(354): require()
+#2 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\ksc\index.php(13): CWebApplication->run()
+REQUEST_URI=/ksc/index.php?r=stripe/checkout&orderId=4
+in C:\xampp\htdocs\ksc\protected\controllers\StripeController.php (3)
+in C:\xampp\htdocs\ksc\protected\controllers\StripeController.php (3)
+in C:\xampp\htdocs\ksc\index.php (13)
+2025/05/14 22:19:29 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "order/view". in C:\xampp\htdocs\ksc\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#1 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ksc/index.php?r=order/view&id=4
+---
+2025/05/14 22:23:22 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "order/view". in C:\xampp\htdocs\ksc\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#1 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ksc/index.php?r=order/view&id=4
+---
+2025/05/14 22:23:23 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "order/view". in C:\xampp\htdocs\ksc\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#1 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ksc/index.php?r=order/view&id=4
+---
+2025/05/14 22:23:24 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "order/view". in C:\xampp\htdocs\ksc\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#1 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ksc/index.php?r=order/view&id=4
+---
+2025/05/14 22:23:24 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "order/view". in C:\xampp\htdocs\ksc\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#1 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ksc/index.php?r=order/view&id=4
+---

@@ -1,0 +1,59 @@
+/* File: /css/shared.css */
+
+/* Global font */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Shopee-styled primary button */
+.btn-ksc {
+    background-color: #f84f30;
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.btn-ksc:hover {
+    background-color: #d93f26;
+}
+
+/* Card/section styling */
+.section-box {
+    background-color: #fff6f5;
+    border: 1px solid #ffe2dc;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Tag or badge */
+.badge-ksc {
+    background-color: #f84f30;
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+}
+
+.btn-danger {
+    background-color: #f84f30;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #d93f26;
+}
+
+.category-tile.card:hover {
+    transform: scale(1.03);
+    transition: transform 0.2s ease-in-out;
+    border-color: #f84f30;
+    box-shadow: 0 0 0 2px #f84f30;
+}
+
+.card input:focus {
+    box-shadow: 0 0 0 0.15rem rgba(248, 79, 48, 0.25);
+}
