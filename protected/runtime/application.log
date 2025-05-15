@@ -630,3 +630,108 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/ksc/index.php?r=order/view&id=4
 ---
+2025/05/14 23:35:27 [error] [exception.Stripe\Exception\UnexpectedValueException] Stripe\Exception\UnexpectedValueException: Could not determine which URL to request: Stripe\PaymentIntent instance has invalid ID:  in C:\xampp\htdocs\ksc\vendor\stripe\stripe-php\lib\ApiResource.php:107
+Stack trace:
+#0 C:\xampp\htdocs\ksc\vendor\stripe\stripe-php\lib\ApiResource.php(121): Stripe\ApiResource::resourceUrl(NULL)
+#1 C:\xampp\htdocs\ksc\vendor\stripe\stripe-php\lib\ApiResource.php(57): Stripe\ApiResource->instanceUrl()
+#2 C:\xampp\htdocs\ksc\vendor\stripe\stripe-php\lib\PaymentIntent.php(164): Stripe\ApiResource->refresh()
+#3 C:\xampp\htdocs\ksc\protected\controllers\StripeController.php(56): Stripe\PaymentIntent::retrieve(NULL)
+#4 [internal function]: StripeController->actionSuccess('7')
+#5 C:\xampp\htdocs\ksc\framework\web\actions\CAction.php(114): ReflectionMethod->invokeArgs(Object(StripeController), Array)
+#6 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(StripeController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\ksc\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('success')
+#11 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('stripe/success')
+#12 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/ksc/index.php?r=stripe/success&orderId=7
+---
+2025/05/14 23:36:09 [error] [exception.Stripe\Exception\UnexpectedValueException] Stripe\Exception\UnexpectedValueException: Could not determine which URL to request: Stripe\PaymentIntent instance has invalid ID:  in C:\xampp\htdocs\ksc\vendor\stripe\stripe-php\lib\ApiResource.php:107
+Stack trace:
+#0 C:\xampp\htdocs\ksc\vendor\stripe\stripe-php\lib\ApiResource.php(121): Stripe\ApiResource::resourceUrl(NULL)
+#1 C:\xampp\htdocs\ksc\vendor\stripe\stripe-php\lib\ApiResource.php(57): Stripe\ApiResource->instanceUrl()
+#2 C:\xampp\htdocs\ksc\vendor\stripe\stripe-php\lib\PaymentIntent.php(164): Stripe\ApiResource->refresh()
+#3 C:\xampp\htdocs\ksc\protected\controllers\StripeController.php(56): Stripe\PaymentIntent::retrieve(NULL)
+#4 [internal function]: StripeController->actionSuccess('7')
+#5 C:\xampp\htdocs\ksc\framework\web\actions\CAction.php(114): ReflectionMethod->invokeArgs(Object(StripeController), Array)
+#6 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(StripeController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\ksc\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('success')
+#11 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('stripe/success')
+#12 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/ksc/index.php?r=stripe/success&orderId=7
+---
+2025/05/14 23:38:29 [error] [exception.CHttpException.400] CHttpException: Payment not successful. in C:\xampp\htdocs\ksc\protected\controllers\StripeController.php:64
+Stack trace:
+#0 [internal function]: StripeController->actionSuccess('7')
+#1 C:\xampp\htdocs\ksc\framework\web\actions\CAction.php(114): ReflectionMethod->invokeArgs(Object(StripeController), Array)
+#2 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(StripeController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ksc\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('success')
+#7 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('stripe/success')
+#8 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/ksc/index.php?r=stripe/success&orderId=7
+---
+2025/05/14 23:38:48 [error] [exception.CHttpException.400] CHttpException: Payment not successful. in C:\xampp\htdocs\ksc\protected\controllers\StripeController.php:64
+Stack trace:
+#0 [internal function]: StripeController->actionSuccess('7')
+#1 C:\xampp\htdocs\ksc\framework\web\actions\CAction.php(114): ReflectionMethod->invokeArgs(Object(StripeController), Array)
+#2 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(StripeController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ksc\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('success')
+#7 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('stripe/success')
+#8 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/ksc/index.php?r=stripe/success&orderId=7
+---
+2025/05/15 15:03:56 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\xampp\htdocs\ksc\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\xampp\htdocs\ksc\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\ksc\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\xampp\htdocs\ksc\framework\base\CApplication.php(459): CModule->getComponent('db')
+#4 C:\xampp\htdocs\ksc\framework\db\ar\CActiveRecord.php(639): CApplication->getDb()
+#5 C:\xampp\htdocs\ksc\framework\db\ar\CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\ksc\framework\db\ar\CActiveRecord.php(1477): CActiveRecord->getCommandBuilder()
+#7 C:\xampp\htdocs\ksc\protected\views\site\index.php(33): CActiveRecord->findAll(Object(CDbCriteria))
+#8 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\ksc\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#10 C:\xampp\htdocs\ksc\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#11 C:\xampp\htdocs\ksc\framework\web\CController.php(785): CController->renderPartial('index', NULL, true)
+#12 C:\xampp\htdocs\ksc\protected\controllers\SiteController.php(26): CController->render('index')
+#13 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#14 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\ksc\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#19 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/ksc/
+---
+2025/05/15 17:36:59 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "print". in C:\xampp\htdocs\ksc\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\CController.php(270): CController->missingAction('print')
+#1 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('print')
+#2 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('orders/print')
+#3 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ksc/index.php?r=orders/print&id=9
+HTTP_REFERER=http://localhost/ksc/index.php?r=orders/view&id=9
+---

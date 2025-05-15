@@ -2,7 +2,7 @@
 /* @var $this ProductsController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs = array('Products');
+
 
 $this->menu = array(
     array('label' => 'Create Product', 'url' => array('create'), 'visible' => Yii::app()->user->getState('role') === 'seller'),

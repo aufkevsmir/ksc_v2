@@ -2,11 +2,13 @@
 /* @var $data Orders */
 ?>
 
-<div class="list-group-item">
-    <h6 class="fw-bold mb-1">Order #<?php echo $data->id; ?> 
-        <span class="badge bg-secondary ms-2"><?php echo ucfirst($data->status); ?></span>
-    </h6>
-    <p class="mb-1 text-muted">Seller: <?php echo CHtml::encode($data->seller->full_name); ?></p>
-    <p class="mb-1">Total: ₱<?php echo number_format($data->total_amount, 2); ?></p>
-    <a href="<?php echo Yii::app()->createUrl('orders/view', ['id' => $data->id]); ?>" class="btn btn-sm btn-outline-primary mt-2">View Details</a>
+<div class="card shadow-sm mb-3 p-3">
+    <h5>Order #<?php echo $data->id; ?> - ₱<?php echo number_format($data->total_amount, 2); ?></h5>
+    <p>Buyer: <?php echo CHtml::encode($data->buyer->full_name); ?></p>
+    <p>Status: <strong><?php echo ucfirst($data->status); ?></strong></p>
+
+    <a href="<?php echo Yii::app()->createUrl('orders/view', ['id' => $data->id]); ?>" class="btn btn-primary btn-sm">
+        View & Approve
+    </a>
 </div>
+

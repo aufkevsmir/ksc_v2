@@ -35,21 +35,20 @@ class Products extends CActiveRecord
 	 */
 	public function rules()
 	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('seller_id, name, price', 'required'),
-			array('seller_id, stock', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>150),
-			array('price', 'length', 'max'=>10),
-			array('image_url', 'length', 'max'=>255),
-			array('status', 'length', 'max'=>8),
-			array('description, created_at', 'safe'),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, seller_id, name, description, price, stock, image_url, status, created_at', 'safe', 'on'=>'search'),
-		);
+		return [
+			['seller_id, name, price', 'required'],
+			['seller_id, stock', 'numerical', 'integerOnly' => true],
+			['name', 'length', 'max' => 150],
+			['price', 'length', 'max' => 10],
+			['image_url', 'file', 'types' => 'jpg,jpeg,png,gif', 'allowEmpty' => true],
+			['category', 'length', 'max' => 100],
+			['status', 'length', 'max' => 8],
+			['description, created_at', 'safe'],
+			['id, seller_id, name, description, price, stock, image_url, category, status, created_at', 'safe', 'on' => 'search'],
+		];
 	}
+
+
 
 	/**
 	 * @return array relational rules.

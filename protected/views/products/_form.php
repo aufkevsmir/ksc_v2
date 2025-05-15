@@ -1,44 +1,70 @@
-<?php $form = $this->beginWidget('CActiveForm', array(
+<?php
+$form = $this->beginWidget('CActiveForm', [
     'id' => 'products-form',
     'enableAjaxValidation' => false,
-)); ?>
+    'htmlOptions' => ['enctype' => 'multipart/form-data'],
+]); 
+?>
 
 <p class="note">Fields with <span class="required">*</span> are required.</p>
 
 <?php echo $form->errorSummary($model); ?>
 
-<div class="row">
+<!-- Product Name -->
+<div class="form-group mb-3">
     <?php echo $form->labelEx($model, 'name'); ?>
-    <?php echo $form->textField($model, 'name', array('size' => 60, 'maxlength' => 150)); ?>
+    <?php echo $form->textField($model, 'name', ['class' => 'form-control', 'maxlength' => 150]); ?>
     <?php echo $form->error($model, 'name'); ?>
 </div>
 
-<div class="row">
+<!-- Description -->
+<div class="form-group mb-3">
     <?php echo $form->labelEx($model, 'description'); ?>
-    <?php echo $form->textArea($model, 'description', array('rows' => 6, 'cols' => 50)); ?>
+    <?php echo $form->textArea($model, 'description', ['rows' => 4, 'class' => 'form-control']); ?>
     <?php echo $form->error($model, 'description'); ?>
 </div>
 
-<div class="row">
+<!-- Price -->
+<div class="form-group mb-3">
     <?php echo $form->labelEx($model, 'price'); ?>
-    <?php echo $form->textField($model, 'price'); ?>
+    <?php echo $form->textField($model, 'price', ['class' => 'form-control']); ?>
     <?php echo $form->error($model, 'price'); ?>
 </div>
 
-<div class="row">
+<!-- Stock -->
+<div class="form-group mb-3">
     <?php echo $form->labelEx($model, 'stock'); ?>
-    <?php echo $form->textField($model, 'stock'); ?>
+    <?php echo $form->textField($model, 'stock', ['class' => 'form-control']); ?>
     <?php echo $form->error($model, 'stock'); ?>
 </div>
 
-<div class="row">
+<!-- Category -->
+<div class="form-group mb-3">
+    <?php echo $form->labelEx($model, 'category'); ?>
+    <?php echo $form->dropDownList($model, 'category', [
+        '' => 'Select Category',
+        'Electronics' => 'Electronics',
+        'Apparel' => 'Apparel',
+        'Home & Living' => 'Home & Living',
+        'Beauty' => 'Beauty',
+        'Sports' => 'Sports',
+        'Automotive' => 'Automotive',
+        'Toys' => 'Toys',
+        'Office' => 'Office',
+    ], ['class' => 'form-control']); ?>
+    <?php echo $form->error($model, 'category'); ?>
+</div>
+
+<!-- Image Upload -->
+<div class="form-group mb-4">
     <?php echo $form->labelEx($model, 'image_url'); ?>
-    <?php echo $form->textField($model, 'image_url', array('size' => 60, 'maxlength' => 255)); ?>
+    <?php echo $form->fileField($model, 'image_url', ['class' => 'form-control']); ?>
     <?php echo $form->error($model, 'image_url'); ?>
 </div>
 
-<div class="row buttons">
-    <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+<!-- Submit -->
+<div class="form-group">
+    <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', ['class' => 'btn btn-primary']); ?>
 </div>
 
 <?php $this->endWidget(); ?>

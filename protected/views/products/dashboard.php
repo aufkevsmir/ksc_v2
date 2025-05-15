@@ -1,5 +1,5 @@
 <?php
-$this->breadcrumbs = ['Seller Dashboard'];
+
 ?>
 
 <div class="card shadow-sm mb-5">

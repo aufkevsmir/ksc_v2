@@ -7,7 +7,6 @@ $this->breadcrumbs = [
     'Order #' . $model->id,
 ];
 
-// Bootstrap status badge map
 $statusClasses = [
     'pending' => 'secondary',
     'paid' => 'info',
@@ -18,11 +17,13 @@ $statusClasses = [
 
 $statusLabel = ucfirst($model->status);
 $statusClass = $statusClasses[$model->status] ?? 'secondary';
+$isBuyer = Yii::app()->user->getId() == $model->buyer_id;
+$isSeller = Yii::app()->user->getId() == $model->seller_id;
 ?>
 
 <div class="container mt-4">
 
-    <!-- Order Details Card -->
+    <!-- Order Details -->
     <div class="card shadow mb-4">
         <div class="card-header bg-primary text-white">
             <h4 class="mb-0">Order Details #<?php echo $model->id; ?></h4>
@@ -40,13 +41,16 @@ $statusClass = $statusClasses[$model->status] ?? 'secondary';
                     [
                         'label' => 'Status',
                         'type' => 'raw',
-                        'value' => "<span class=\"badge bg-$statusClass\">$statusLabel</span>"
+                        'value' => "<span class=\"badge bg-$statusClass\">$statusLabel</span>",
                     ],
+                    ['label' => 'Shipping Address', 'value' => nl2br(CHtml::encode($model->shipping_address)), 'type' => 'raw'],
+                    ['label' => 'Paid At', 'value' => $model->paid_at ? date('F j, Y g:i A', strtotime($model->paid_at)) : 'Not paid'],
                     ['label' => 'Created At', 'value' => $model->created_at],
                 ],
             ]); ?>
 
-            <?php if ($model->status === 'pending'): ?>
+            <!-- Buyer Payment Button -->
+            <?php if ($model->status === 'pending' && $isBuyer): ?>
                 <div class="mt-4">
                     <a href="<?php echo $this->createUrl('stripe/checkout', ['orderId' => $model->id]); ?>"
                        class="btn btn-success">
@@ -55,10 +59,28 @@ $statusClass = $statusClasses[$model->status] ?? 'secondary';
                 </div>
             <?php endif; ?>
 
+            <!-- Seller Approval Button -->
+            <?php if ($model->status === 'paid' && $isSeller): ?>
+                <form method="post" action="<?php echo $this->createUrl('orders/approve', ['id' => $model->id]); ?>" class="mt-4">
+                    <button type="submit" class="btn btn-primary">
+                        Approve & Send Dispatch
+                    </button>
+                </form>
+            <?php endif; ?>
+
+            <!-- Print Dispatch Button -->
+            <?php if ($isSeller || $isBuyer): ?>
+                <a href="<?php echo $this->createUrl('orders/print', ['id' => $model->id]); ?>"
+                   target="_blank"
+                   class="btn btn-outline-secondary mt-3">
+                   Print Dispatch Slip
+                </a>
+            <?php endif; ?>
+
         </div>
     </div>
 
-    <!-- Order Items Card -->
+    <!-- Order Items -->
     <div class="card shadow">
         <div class="card-header bg-light">
             <h5 class="mb-0">Order Items</h5>

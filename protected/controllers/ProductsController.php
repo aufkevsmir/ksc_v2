@@ -15,28 +15,19 @@ class ProductsController extends Controller
     public function accessRules()
     {
         return [
-            // Public access
-            ['allow',
+            ['allow', // Public
                 'actions' => ['index', 'view'],
                 'users' => ['*'],
             ],
-
-            // Seller and admin access (shared functionality)
-            ['allow',
+            ['allow', // Seller and admin
                 'actions' => ['create', 'update', 'manage', 'deactivate', 'dashboard', 'delete'],
                 'expression' => 'in_array(Yii::app()->user->getState("role"), ["seller", "admin"])',
             ],
-
-            // Admin-exclusive actions
-            ['allow',
+            ['allow', // Admin only
                 'actions' => ['admin'],
                 'expression' => 'Yii::app()->user->getState("role") === "admin"',
             ],
-
-            // Deny all other access
-            ['deny',
-                'users' => ['*'],
-            ],
+            ['deny', 'users' => ['*']],
         ];
     }
 
@@ -53,7 +44,23 @@ class ProductsController extends Controller
             $model->attributes = $_POST['Products'];
             $model->seller_id = Yii::app()->user->id;
             $model->status = 'active';
+
+            // Handle image upload
+            $uploadedFile = CUploadedFile::getInstance($model, 'image_url');
+            if ($uploadedFile) {
+                $filename = uniqid() . '_' . $uploadedFile->name;
+                $model->image_url = 'uploads/products/' . $filename;
+            }
+
             if ($model->save()) {
+                if ($uploadedFile) {
+                    $uploadPath = Yii::getPathOfAlias('webroot') . '/uploads/products/';
+                    if (!is_dir($uploadPath)) {
+                        mkdir($uploadPath, 0775, true);
+                    }
+                    $uploadedFile->saveAs($uploadPath . $filename);
+                }
+
                 Yii::app()->user->setFlash('success', 'Product created successfully.');
                 $this->redirect(['view', 'id' => $model->id]);
             }
@@ -72,7 +79,23 @@ class ProductsController extends Controller
 
         if (isset($_POST['Products'])) {
             $model->attributes = $_POST['Products'];
+
+            // Handle image upload
+            $uploadedFile = CUploadedFile::getInstance($model, 'image_url');
+            if ($uploadedFile) {
+                $filename = uniqid() . '_' . $uploadedFile->name;
+                $model->image_url = 'uploads/products/' . $filename;
+            }
+
             if ($model->save()) {
+                if ($uploadedFile) {
+                    $uploadPath = Yii::getPathOfAlias('webroot') . '/uploads/products/';
+                    if (!is_dir($uploadPath)) {
+                        mkdir($uploadPath, 0775, true);
+                    }
+                    $uploadedFile->saveAs($uploadPath . $filename);
+                }
+
                 Yii::app()->user->setFlash('success', 'Product updated successfully.');
                 $this->redirect(['view', 'id' => $model->id]);
             }
@@ -84,8 +107,6 @@ class ProductsController extends Controller
     public function actionDelete($id)
     {
         $product = $this->loadModel($id);
-
-        // Allow sellers to delete their own active products or admins to delete any
         $isOwner = $product->seller_id == Yii::app()->user->id;
         $isAdmin = Yii::app()->user->getState("role") === "admin";
 
@@ -107,9 +128,7 @@ class ProductsController extends Controller
         $criteria = new CDbCriteria;
         $criteria->condition = 'status = "active"';
 
-        $dataProvider = new CActiveDataProvider('Products', [
-            'criteria' => $criteria,
-        ]);
+        $dataProvider = new CActiveDataProvider('Products', ['criteria' => $criteria]);
 
         $this->render('index', ['dataProvider' => $dataProvider]);
     }
@@ -160,21 +179,14 @@ class ProductsController extends Controller
     public function actionDashboard()
     {
         $role = Yii::app()->user->getState('role');
-
         if (!in_array($role, ['seller', 'admin'])) {
             throw new CHttpException(403, 'Access denied.');
         }
 
         $sellerId = Yii::app()->user->id;
 
-        $productCount = Products::model()->countByAttributes([
-            'seller_id' => $sellerId,
-            'status' => 'active'
-        ]);
-
-        $orderCount = Orders::model()->countByAttributes([
-            'seller_id' => $sellerId
-        ]);
+        $productCount = Products::model()->countByAttributes(['seller_id' => $sellerId, 'status' => 'active']);
+        $orderCount = Orders::model()->countByAttributes(['seller_id' => $sellerId]);
 
         $revenue = Yii::app()->db->createCommand()
             ->select('SUM(total_amount) as total')

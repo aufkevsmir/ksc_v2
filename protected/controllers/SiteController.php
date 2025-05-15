@@ -2,24 +2,21 @@
 
 class SiteController extends Controller
 {
-    /**
-     * Declares class-based actions.
-     */
     public function actions()
     {
-        return array(
-            'captcha' => array(
+        return [
+            'captcha' => [
                 'class' => 'CCaptchaAction',
                 'backColor' => 0xFFFFFF,
-            ),
-            'page' => array(
+            ],
+            'page' => [
                 'class' => 'CViewAction',
-            ),
-        );
+            ],
+        ];
     }
 
     /**
-     * Default homepage action
+     * Homepage
      */
     public function actionIndex()
     {
@@ -27,7 +24,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Handles external exceptions
+     * Error handling
      */
     public function actionError()
     {
@@ -41,7 +38,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Contact page
+     * Contact form
      */
     public function actionContact()
     {
@@ -67,37 +64,37 @@ class SiteController extends Controller
     }
 
     /**
-     * Login page
+     * Login
      */
     public function actionLogin()
-	{
-		$model = new LoginForm;
+    {
+        $model = new LoginForm;
 
-		if (isset($_POST['LoginForm'])) {
-			$model->attributes = $_POST['LoginForm'];
-			if ($model->validate() && $model->login()) {
-    		$this->redirect(Yii::app()->homeUrl);
-				// Role-based redirect
-				$role = Yii::app()->user->getState('role');
-				switch ($role) {
-					case 'admin':
-						$this->redirect(['users/admin']);
-						break;
-					case 'seller':
-						$this->redirect(['products/index']);
-						break;
-					default:
-						$this->redirect(Yii::app()->user->returnUrl);
-				}
-			}
-		}
+        if (isset($_POST['LoginForm'])) {
+            $model->attributes = $_POST['LoginForm'];
+            if ($model->validate() && $model->login()) {
+                // Role-based redirect
+                $role = Yii::app()->user->getState('role');
 
-		$this->render('login', ['model' => $model]);
-	}
+                switch ($role) {
+                    case 'admin':
+                        $this->redirect(['users/admin']);
+                        break;
+                    case 'seller':
+                        $this->redirect(['products/dashboard']);
+                        break;
+                    case 'buyer':
+                    default:
+                        $this->redirect(Yii::app()->homeUrl);
+                }
+            }
+        }
 
+        $this->render('login', ['model' => $model]);
+    }
 
     /**
-     * Logs out the current user and redirects to homepage
+     * Logout
      */
     public function actionLogout()
     {
@@ -107,30 +104,29 @@ class SiteController extends Controller
     }
 
     /**
-     * User registration
+     * Registration
      */
     public function actionRegister()
-	{
-		$model = new RegisterForm;
+    {
+        $model = new RegisterForm;
 
-		if (isset($_POST['RegisterForm'])) {
-			$model->attributes = $_POST['RegisterForm'];
+        if (isset($_POST['RegisterForm'])) {
+            $model->attributes = $_POST['RegisterForm'];
 
-			if ($model->validate()) {
-				$user = new Users;
-				$user->email = $model->email;
-				$user->full_name = $model->full_name;
-				$user->role = $model->role ?? 'buyer';
-				$user->setPassword($model->password);
+            if ($model->validate()) {
+                $user = new Users;
+                $user->email = $model->email;
+                $user->full_name = $model->full_name;
+                $user->role = $model->role ?? 'buyer';
+                $user->setPassword($model->password);
 
-				if ($user->save()) {
-					Yii::app()->user->setFlash('success', 'Registration successful. Please log in.');
-					$this->redirect(['site/login']);
-				}
-			}
-		}
+                if ($user->save()) {
+                    Yii::app()->user->setFlash('success', 'Registration successful. Please log in.');
+                    $this->redirect(['site/login']);
+                }
+            }
+        }
 
-		$this->render('register', ['model' => $model]);
-	}
-
+        $this->render('register', ['model' => $model]);
+    }
 }

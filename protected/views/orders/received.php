@@ -1,18 +1,12 @@
 <?php
-$this->breadcrumbs = ['Orders Received'];
+// $this->breadcrumbs = ['Received Orders'];
 ?>
 
-<div class="card shadow-sm mb-5">
-    <div class="card-body">
-        <h4 class="mb-1">Orders You've Received</h4>
-        <p class="text-muted mb-4">Here are all the orders placed by buyers for your products.</p>
+<h3>Orders Awaiting Approval</h3>
 
-        <?php $this->widget('zii.widgets.CListView', array(
-            'dataProvider' => $dataProvider,
-            'itemView' => '_receivedOrderCard', // renders each order box
-            'summaryText' => '',
-            'emptyText' => '<div class="alert alert-info">No orders received yet.</div>',
-            'itemsCssClass' => 'list-group',
-        )); ?>
-    </div>
-</div>
+<?php $this->widget('zii.widgets.CListView', [
+    'dataProvider' => $dataProvider,
+    'itemView' => '_orderCard', // You'll define this below
+    'summaryText' => '',
+    'emptyText' => 'No paid orders found.',
+]); ?>

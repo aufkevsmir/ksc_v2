@@ -36,47 +36,56 @@ $products = Products::model()->findAll($criteria);
 <div class="container">
 
     <!-- HERO Section -->
-    <div class="card mb-5 shadow-sm">
-        <div class="card-body">
-            <div class="row g-3">
-                <div class="col-md-8">
-                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/hero-main.png" class="img-fluid rounded" alt="Main Banner">
-                </div>
-                <div class="col-md-4 d-flex flex-column gap-3">
-                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/hero-side-1.png" class="img-fluid rounded shadow-sm" alt="Banner 1">
-                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/hero-side-2.png" class="img-fluid rounded shadow-sm" alt="Banner 2">
-                </div>
-            </div>
+    <div class="container-fluid px-0 mb-5">
+    <div class="row g-0">
+        <div class="col-md-8">
+            <img src="<?php echo Yii::app()->baseUrl; ?>/images/hero-main.png"
+                 class="img-fluid w-100"
+                 style="height: 100%; object-fit: cover;"
+                 alt="Main Banner">
+        </div>
+        <div class="col-md-4 d-flex flex-column gap-3">
+            <img src="<?php echo Yii::app()->baseUrl; ?>/images/hero-side-1.png"
+                 class="img-fluid rounded shadow-sm w-100"
+                 alt="Banner 1">
+            <img src="<?php echo Yii::app()->baseUrl; ?>/images/hero-side-2.png"
+                 class="img-fluid rounded shadow-sm w-100"
+                 alt="Banner 2">
         </div>
     </div>
+</div>
+
 
     <!-- Categories -->
     <div class="card mb-5 shadow-sm">
-        <div class="card-body">
-            <h4 class="mb-3">Shop by Category</h4>
-            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3">
-                <?php foreach ($categories as $category): ?>
-                    <?php
-                        $isSelected = ($selectedCategory === $category);
-                        $categoryImg = CHtml::encode($categoryImages[$category] ?? Yii::app()->baseUrl . '/images/categories/placeholder.png');
-                    ?>
-                    <div class="col">
-                        <a href="<?php echo Yii::app()->createUrl('site/index', ['category' => $category]); ?>"
-                           class="text-decoration-none"
-                           aria-label="Browse <?php echo CHtml::encode($category); ?>">
-                            <div class="card category-tile text-center shadow-sm h-100 border <?php echo $isSelected ? 'border-primary' : ''; ?>">
-                                <div class="card-body p-3 d-flex flex-column justify-content-center align-items-center" style="height: 130px;">
-                                    <img src="<?php echo $categoryImg; ?>" alt="<?php echo CHtml::encode($category); ?>"
-                                         class="mb-2" style="width: 40px; height: 40px; object-fit: contain;">
-                                    <div class="text-muted small fw-semibold"><?php echo CHtml::encode($category); ?></div>
-                                </div>
+    <div class="card-body">
+        <h4 class="mb-3">Shop by Category</h4>
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3">
+            <?php foreach ($categories as $category): ?>
+                <?php
+                    $isSelected = ($selectedCategory === $category);
+                    $categoryImg = CHtml::encode($categoryImages[$category] ?? Yii::app()->baseUrl . '/images/categories/placeholder.png');
+                ?>
+                <div class="col">
+                    <a href="<?php echo Yii::app()->createUrl('site/index', ['category' => $category]); ?>"
+                       class="text-decoration-none"
+                       aria-label="Browse <?php echo CHtml::encode($category); ?>">
+                        <div class="card category-tile text-center shadow-sm h-100 border <?php echo $isSelected ? 'border-primary' : ''; ?>">
+                            <div class="card-body p-3 d-flex flex-column justify-content-center align-items-center" style="height: 150px;">
+                                <img src="<?php echo $categoryImg; ?>"
+                                     alt="<?php echo CHtml::encode($category); ?>"
+                                     class="mb-2"
+                                     style="width: 60px; height: 60px; object-fit: contain;">
+                                <div class="text-muted small fw-semibold"><?php echo CHtml::encode($category); ?></div>
                             </div>
-                        </a>
-                    </div>
-                <?php endforeach; ?>
-            </div>
+                        </div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
+</div>
+
 
     <!-- Daily Discover -->
     <div class="card shadow-sm">

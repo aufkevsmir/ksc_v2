@@ -1,12 +1,19 @@
 <?php
-$this->breadcrumbs = ['Products' => ['index'], $model->name];
+
+
+$isGuest  = Yii::app()->user->isGuest;
+$isBuyer  = Yii::app()->user->getState('role') === 'buyer';
+$loginUrl = Yii::app()->createUrl('site/login');
 ?>
 
 <div class="row mb-5">
     <!-- LEFT: Image -->
     <div class="col-md-6">
         <?php if ($model->image_url): ?>
-            <img src="<?php echo CHtml::encode($model->image_url); ?>" class="img-fluid rounded mb-3" style="max-height: 400px; object-fit: cover;" alt="<?php echo CHtml::encode($model->name); ?>">
+            <img src="<?php echo CHtml::encode($model->image_url); ?>"
+                 class="img-fluid rounded mb-3"
+                 style="max-height: 400px; object-fit: cover;"
+                 alt="<?php echo CHtml::encode($model->name); ?>">
         <?php else: ?>
             <div class="bg-light border rounded p-5 text-center text-muted">No Image Available</div>
         <?php endif; ?>
@@ -17,7 +24,7 @@ $this->breadcrumbs = ['Products' => ['index'], $model->name];
         <h2 class="fw-bold"><?php echo CHtml::encode($model->name); ?></h2>
         <h3 class="text-danger fw-bold">₱<?php echo number_format($model->price, 2); ?></h3>
 
-        <?php if (Yii::app()->user->getState('role') === 'buyer'): ?>
+        <?php if ($isBuyer): ?>
             <form method="post" action="<?php echo Yii::app()->createUrl('cart/add'); ?>">
                 <input type="hidden" name="product_id" value="<?php echo $model->id; ?>" />
                 <input type="hidden" id="redirect_to_checkout" name="redirect" value="0" />
@@ -43,6 +50,15 @@ $this->breadcrumbs = ['Products' => ['index'], $model->name];
                     <button type="submit" class="btn btn-danger" onclick="triggerBuyNow()">Buy Now</button>
                 </div>
             </form>
+
+        <?php elseif ($isGuest): ?>
+            <div class="alert alert-info mb-3">
+                Please <a href="<?php echo $loginUrl; ?>">log in</a> to add items to your cart or checkout.
+            </div>
+            <div class="d-flex gap-3 mb-4">
+                <a href="<?php echo $loginUrl; ?>" class="btn btn-outline-danger">🛒 Add to Cart</a>
+                <a href="<?php echo $loginUrl; ?>" class="btn btn-danger">Buy Now</a>
+            </div>
         <?php endif; ?>
     </div>
 </div>
