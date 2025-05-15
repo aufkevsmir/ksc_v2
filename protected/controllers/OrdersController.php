@@ -21,11 +21,10 @@ class OrdersController extends Controller
                 'actions' => ['index', 'view'],
                 'users' => ['*'],
             ],
-			['allow',
-				'actions' => ['print'],
-				'expression' => 'in_array(Yii::app()->user->getState("role"), ["buyer", "seller", "admin"])',
-			],
-
+            ['allow',
+                'actions' => ['print'],
+                'expression' => 'in_array(Yii::app()->user->getState("role"), ["buyer", "seller", "admin"])',
+            ],
             ['allow',
                 'actions' => ['my'],
                 'expression' => 'Yii::app()->user->getState("role") === "buyer"',
@@ -104,7 +103,7 @@ class OrdersController extends Controller
         $this->render('admin', ['model' => $model]);
     }
 
-    // --- Buyer & Seller Actions ---
+    // --- Buyer & Seller Views ---
 
     public function actionMy()
     {
@@ -151,13 +150,14 @@ class OrdersController extends Controller
         $order->status = 'shipped';
         $order->save(false);
 
-        // Notify via Zapier Webhook
+        // Notify via Zapier
         $payload = [
-            'order_id'     => $order->id,
-            'buyer_email'  => $order->buyer->email,
-            'buyer_name'   => $order->buyer->full_name,
-            'total_amount' => $order->total_amount,
-            'products'     => array_map(function ($item) {
+            'order_id'          => $order->id,
+            'buyer_email'       => $order->buyer->email,
+            'buyer_name'        => $order->buyer->full_name,
+            'total_amount'      => $order->total_amount,
+            'shipping_address'  => $order->shipping_address,
+            'products' => array_map(function ($item) {
                 return [
                     'name'     => $item->product->name,
                     'quantity' => $item->quantity,
@@ -189,7 +189,7 @@ class OrdersController extends Controller
         ]);
     }
 
-    // --- Utility Functions ---
+    // --- Helpers ---
 
     protected function loadModel($id)
     {

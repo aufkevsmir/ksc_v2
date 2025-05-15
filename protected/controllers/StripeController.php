@@ -30,6 +30,9 @@ class StripeController extends Controller
             'payment_method_types' => ['card'],
             'line_items' => $items,
             'mode' => 'payment',
+            'shipping_address_collection' => [
+                'allowed_countries' => ['PH'], // adjust as needed
+            ],
             'success_url' => Yii::app()->createAbsoluteUrl('stripe/success', ['orderId' => $orderId]),
             'cancel_url' => Yii::app()->createAbsoluteUrl('cart/index'),
         ]);
@@ -56,22 +59,20 @@ class StripeController extends Controller
             throw new CHttpException(404, 'Transaction not found.');
         }
 
-        // Expand to safely get the intent
         $session = \Stripe\Checkout\Session::retrieve([
             'id' => $txn->stripe_session_id,
-            'expand' => ['payment_intent'],
+            'expand' => ['payment_intent', 'shipping'],
         ]);
 
         $intent = $session->payment_intent;
 
-        // ❌ If missing or unpaid, redirect user back to checkout
         if (!$intent || $intent->status !== 'succeeded') {
             Yii::app()->user->setFlash('error', 'Your payment session has expired or was incomplete. Please try again.');
             $this->redirect(['stripe/checkout', 'orderId' => $orderId]);
             return;
         }
 
-        // ✅ Store Stripe info
+        // ✅ Save payment confirmation
         $txn->stripe_payment_intent = $intent->id;
         $txn->paid_at = date('Y-m-d H:i:s');
         $txn->save();
@@ -79,6 +80,23 @@ class StripeController extends Controller
         // ✅ Update order
         $order = Orders::model()->with('orderItems.product', 'buyer')->findByPk($orderId);
         $order->status = 'paid';
+
+        // ✅ Save shipping address if available
+        if (!empty($session->shipping) && isset($session->shipping->address)) {
+        $addr = $session->shipping->address;
+        $name = $session->shipping->name ?? '';
+        $fullAddress = implode(', ', array_filter([
+            $name,
+            $addr->line1 ?? '',
+            $addr->line2 ?? '',
+            $addr->city ?? '',
+            $addr->postal_code ?? '',
+            $addr->country ?? ''
+        ]));
+        $order->shipping_address = $fullAddress;
+    }
+
+
         $order->save(false);
 
         // ✅ Deduct stock
@@ -90,15 +108,16 @@ class StripeController extends Controller
             }
         }
 
-        // ✅ Trigger Zapier
+        // ✅ Send to Zapier
         $payload = [
-            'order_id'      => $order->id,
-            'buyer_name'    => $order->buyer->full_name,
-            'buyer_email'   => $order->buyer->email,
-            'total_amount'  => $order->total_amount,
-            'status'        => 'paid',
-            'created_at'    => $order->created_at,
-            'products'      => array_map(function ($item) {
+            'order_id'          => $order->id,
+            'buyer_name'        => $order->buyer->full_name,
+            'buyer_email'       => $order->buyer->email,
+            'total_amount'      => $order->total_amount,
+            'status'            => 'paid',
+            'created_at'        => $order->created_at,
+            'shipping_address'  => $order->shipping_address,
+            'products' => array_map(function ($item) {
                 return [
                     'name'     => $item->product->name,
                     'price'    => $item->price,
@@ -108,14 +127,16 @@ class StripeController extends Controller
         ];
 
         $ch = curl_init('https://hooks.zapier.com/hooks/catch/22896966/2nxpkub/');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
-        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => json_encode($payload),
+            CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
+        ]);
         curl_exec($ch);
         curl_close($ch);
 
-        // ✅ Redirect to Order View
+        // ✅ Redirect
         $this->redirect(['orders/view', 'id' => $orderId]);
     }
 }

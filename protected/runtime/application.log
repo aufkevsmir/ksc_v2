@@ -803,3 +803,33 @@ Stack trace:
 REQUEST_URI=/ksc/index.php?r=orders/print&id=8
 HTTP_REFERER=http://localhost/ksc/index.php?r=orders/view&id=8
 ---
+2025/05/15 19:13:28 [error] [exception.CHttpException.400] CHttpException: Order cannot be approved. in C:\xampp\htdocs\ksc\protected\controllers\OrdersController.php:143
+Stack trace:
+#0 [internal function]: OrdersController->actionApprove('5')
+#1 C:\xampp\htdocs\ksc\framework\web\actions\CAction.php(114): ReflectionMethod->invokeArgs(Object(OrdersController), Array)
+#2 C:\xampp\htdocs\ksc\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrdersController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\ksc\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ksc\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ksc\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ksc\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ksc\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ksc\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ksc\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(282): CController->run('approve')
+#12 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('orders/approve')
+#13 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ksc/index.php?r=orders/approve&id=5
+HTTP_REFERER=http://localhost/ksc/index.php?r=orders/view&id=5
+---
+2025/05/15 19:33:33 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "orders/received". in C:\xampp\htdocs\ksc\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ksc\framework\web\CWebApplication.php(141): CWebApplication->runController('orders/received')
+#1 C:\xampp\htdocs\ksc\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ksc\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ksc/index.php?r=orders/received
+HTTP_REFERER=http://localhost/ksc/index.php?r=products/index
+---
