@@ -4,10 +4,7 @@
 
 
 
-$this->menu = array(
-    array('label' => 'Create Product', 'url' => array('create'), 'visible' => Yii::app()->user->getState('role') === 'seller'),
-    array('label' => 'Manage Products', 'url' => array('manage'), 'visible' => Yii::app()->user->getState('role') === 'seller'),
-);
+
 ?>
 
 <div class="card shadow-sm mb-5">

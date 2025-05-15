@@ -57,3 +57,13 @@ body {
 .card input:focus {
     box-shadow: 0 0 0 0.15rem rgba(248, 79, 48, 0.25);
 }
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination li {
+    display: inline-block;
+    margin: 0 3px;
+}

@@ -2,189 +2,209 @@
 
 class OrdersController extends Controller
 {
-	public $layout = '//layouts/column2';
+    public $layout = '//layouts/column2';
 
-	public function filters()
-	{
-		return [
-			'accessControl',
-			'postOnly + delete',
-		];
-	}
+    // --- Filters ---
+    public function filters()
+    {
+        return [
+            'accessControl',
+            'postOnly + delete',
+        ];
+    }
 
-	public function accessRules()
-	{
-		return [
-			// Public access
+    // --- Access Rules ---
+    public function accessRules()
+    {
+        return [
+            ['allow',
+                'actions' => ['index', 'view'],
+                'users' => ['*'],
+            ],
 			['allow',
-				'actions' => ['index', 'view'],
-				'users' => ['*'],
+				'actions' => ['print'],
+				'expression' => 'in_array(Yii::app()->user->getState("role"), ["buyer", "seller", "admin"])',
 			],
-			// Buyer-only
-			['allow',
-				'actions' => ['my'],
-				'expression' => 'Yii::app()->user->getState("role") === "buyer"',
-			],
-			// Seller or admin
-			['allow',
-				'actions' => ['received', 'approve'],
-				'expression' => 'in_array(Yii::app()->user->getState("role"), ["seller", "admin"])',
-			],
-			// Admin only
-			['allow',
-				'actions' => ['admin', 'delete'],
-				'expression' => 'Yii::app()->user->getState("role") === "admin"',
-			],
-			// Deny all others
-			['deny', 'users' => ['*']],
-		];
-	}
 
-	public function actionIndex()
-	{
-		$dataProvider = new CActiveDataProvider('Orders');
-		$this->render('index', ['dataProvider' => $dataProvider]);
-	}
+            ['allow',
+                'actions' => ['my'],
+                'expression' => 'Yii::app()->user->getState("role") === "buyer"',
+            ],
+            ['allow',
+                'actions' => ['received', 'approve'],
+                'expression' => 'in_array(Yii::app()->user->getState("role"), ["seller", "admin"])',
+            ],
+            ['allow',
+                'actions' => ['admin', 'delete'],
+                'expression' => 'Yii::app()->user->getState("role") === "admin"',
+            ],
+            ['deny', 'users' => ['*']],
+        ];
+    }
 
-	public function actionView($id)
-	{
-		$this->render('view', ['model' => $this->loadModel($id)]);
-	}
+    // --- CRUD Actions ---
 
-	public function actionCreate()
-	{
-		$model = new Orders;
+    public function actionIndex()
+    {
+        $dataProvider = new CActiveDataProvider('Orders');
+        $this->render('index', ['dataProvider' => $dataProvider]);
+    }
 
-		if (isset($_POST['Orders'])) {
-			$model->attributes = $_POST['Orders'];
-			if ($model->save()) {
-				$this->redirect(['view', 'id' => $model->id]);
-			}
-		}
+    public function actionView($id)
+    {
+        $this->render('view', ['model' => $this->loadModel($id)]);
+    }
 
-		$this->render('create', ['model' => $model]);
-	}
+    public function actionCreate()
+    {
+        $model = new Orders;
 
-	public function actionUpdate($id)
-	{
-		$model = $this->loadModel($id);
+        if (isset($_POST['Orders'])) {
+            $model->attributes = $_POST['Orders'];
+            if ($model->save()) {
+                $this->redirect(['view', 'id' => $model->id]);
+            }
+        }
 
-		if (isset($_POST['Orders'])) {
-			$model->attributes = $_POST['Orders'];
-			if ($model->save()) {
-				$this->redirect(['view', 'id' => $model->id]);
-			}
-		}
+        $this->render('create', ['model' => $model]);
+    }
 
-		$this->render('update', ['model' => $model]);
-	}
+    public function actionUpdate($id)
+    {
+        $model = $this->loadModel($id);
 
-	public function actionDelete($id)
-	{
-		$this->loadModel($id)->delete();
+        if (isset($_POST['Orders'])) {
+            $model->attributes = $_POST['Orders'];
+            if ($model->save()) {
+                $this->redirect(['view', 'id' => $model->id]);
+            }
+        }
 
-		if (!isset($_GET['ajax'])) {
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : ['admin']);
-		}
-	}
+        $this->render('update', ['model' => $model]);
+    }
 
-	public function actionAdmin()
-	{
-		$model = new Orders('search');
-		$model->unsetAttributes();
+    public function actionDelete($id)
+    {
+        $this->loadModel($id)->delete();
 
-		if (isset($_GET['Orders'])) {
-			$model->attributes = $_GET['Orders'];
-		}
+        if (!isset($_GET['ajax'])) {
+            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : ['admin']);
+        }
+    }
 
-		$this->render('admin', ['model' => $model]);
-	}
+    public function actionAdmin()
+    {
+        $model = new Orders('search');
+        $model->unsetAttributes();
 
-	public function actionMy()
-	{
-		$criteria = new CDbCriteria;
-		$criteria->condition = 'buyer_id = :uid';
-		$criteria->params = [':uid' => Yii::app()->user->id];
-		$criteria->order = 'created_at DESC';
+        if (isset($_GET['Orders'])) {
+            $model->attributes = $_GET['Orders'];
+        }
 
-		$dataProvider = new CActiveDataProvider('Orders', [
-			'criteria' => $criteria,
-			'pagination' => ['pageSize' => 10],
-		]);
+        $this->render('admin', ['model' => $model]);
+    }
 
-		$this->render('my', ['dataProvider' => $dataProvider]);
-	}
+    // --- Buyer & Seller Actions ---
 
-	public function actionReceived()
-	{
-		$criteria = new CDbCriteria;
-		$criteria->condition = 'seller_id = :sid AND status = "paid"';
-		$criteria->params = [':sid' => Yii::app()->user->id];
-		$criteria->order = 'created_at DESC';
+    public function actionMy()
+    {
+        $criteria = new CDbCriteria;
+        $criteria->condition = 'buyer_id = :uid';
+        $criteria->params = [':uid' => Yii::app()->user->id];
+        $criteria->order = 'created_at DESC';
 
-		$dataProvider = new CActiveDataProvider('Orders', [
-			'criteria' => $criteria,
-			'pagination' => ['pageSize' => 10],
-		]);
+        $dataProvider = new CActiveDataProvider('Orders', [
+            'criteria' => $criteria,
+            'pagination' => ['pageSize' => 10],
+        ]);
 
-		$this->render('received', ['dataProvider' => $dataProvider]);
-	}
+        $this->render('my', ['dataProvider' => $dataProvider]);
+    }
 
-	public function actionApprove($id)
-	{
-		$order = Orders::model()->with('buyer', 'orderItems.product')->findByPk($id);
+    public function actionReceived()
+    {
+        $criteria = new CDbCriteria;
+        $criteria->condition = 'seller_id = :sid AND status = "paid"';
+        $criteria->params = [':sid' => Yii::app()->user->id];
+        $criteria->order = 'created_at DESC';
 
-		if (!$order || $order->status !== 'paid') {
-			throw new CHttpException(400, 'Order cannot be approved.');
-		}
+        $dataProvider = new CActiveDataProvider('Orders', [
+            'criteria' => $criteria,
+            'pagination' => ['pageSize' => 10],
+        ]);
 
-		if ($order->seller_id != Yii::app()->user->id) {
-			throw new CHttpException(403, 'Not authorized.');
-		}
+        $this->render('received', ['dataProvider' => $dataProvider]);
+    }
 
-		$order->status = 'shipped';
-		$order->save(false);
+    public function actionApprove($id)
+    {
+        $order = Orders::model()->with('buyer', 'orderItems.product')->findByPk($id);
 
-		$payload = [
-			'order_id' => $order->id,
-			'buyer_email' => $order->buyer->email,
-			'buyer_name' => $order->buyer->full_name,
-			'total_amount' => $order->total_amount,
-			'products' => array_map(function ($item) {
-				return [
-					'name' => $item->product->name,
-					'quantity' => $item->quantity,
-					'price' => $item->price,
-				];
-			}, $order->orderItems),
-		];
+        if (!$order || $order->status !== 'paid') {
+            throw new CHttpException(400, 'Order cannot be approved.');
+        }
 
-		$ch = curl_init('https://hooks.zapier.com/hooks/catch/22896966/2nxpkub/');
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
-		curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-		curl_exec($ch);
-		curl_close($ch);
+        if ($order->seller_id != Yii::app()->user->id) {
+            throw new CHttpException(403, 'Not authorized.');
+        }
 
-		Yii::app()->user->setFlash('success', 'Order approved and dispatch slip sent.');
-		$this->redirect(['view', 'id' => $order->id]);
-	}
+        $order->status = 'shipped';
+        $order->save(false);
 
-	protected function loadModel($id)
-	{
-		$model = Orders::model()->findByPk($id);
-		if ($model === null) {
-			throw new CHttpException(404, 'The requested page does not exist.');
-		}
-		return $model;
-	}
+        // Notify via Zapier Webhook
+        $payload = [
+            'order_id'     => $order->id,
+            'buyer_email'  => $order->buyer->email,
+            'buyer_name'   => $order->buyer->full_name,
+            'total_amount' => $order->total_amount,
+            'products'     => array_map(function ($item) {
+                return [
+                    'name'     => $item->product->name,
+                    'quantity' => $item->quantity,
+                    'price'    => $item->price,
+                ];
+            }, $order->orderItems),
+        ];
 
-	protected function performAjaxValidation($model)
-	{
-		if (isset($_POST['ajax']) && $_POST['ajax'] === 'orders-form') {
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-	}
+        $ch = curl_init('https://hooks.zapier.com/hooks/catch/22896966/2nxpkub/');
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => json_encode($payload),
+            CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
+        ]);
+        curl_exec($ch);
+        curl_close($ch);
+
+        Yii::app()->user->setFlash('success', 'Order approved and dispatch slip sent.');
+        $this->redirect(['view', 'id' => $order->id]);
+    }
+
+    public function actionPrint($id)
+    {
+        $model = $this->loadModel($id);
+        $this->renderPartial('_orderDetails', [
+            'model' => $model,
+            'showActions' => false,
+        ]);
+    }
+
+    // --- Utility Functions ---
+
+    protected function loadModel($id)
+    {
+        $model = Orders::model()->findByPk($id);
+        if ($model === null) {
+            throw new CHttpException(404, 'The requested page does not exist.');
+        }
+        return $model;
+    }
+
+    protected function performAjaxValidation($model)
+    {
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'orders-form') {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+    }
 }
